@@ -3,7 +3,7 @@ class Solution {
         List<List<Integer>> res = new ArrayList<>();
         Arrays.sort(nums);
 
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < nums.length-2; i++) {
             if (i > 0 && nums[i] == nums[i-1]) {
                 continue;
             }
@@ -11,7 +11,7 @@ class Solution {
             int start = i + 1;
             int end = nums.length - 1;
 
-            while (start < end) {
+            while (start != end) {
                 int total = nums[i] + nums[start] + nums[end];
 
                 if (total > 0) {
